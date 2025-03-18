@@ -23,7 +23,7 @@ class AdvisorSumaryTableViewCell: UITableViewCell {
         layer.shadowOpacity = 0.6
     }
 
-    func setCell(model: AdvisorSummraryModel) {
+    func setCell(model: AdvisorSummraryWrapper.AdvisorSummraryModel) {
         advisorName.text = model.name
         var assets = ""
         model.custodians.forEach {

@@ -9,7 +9,7 @@ protocol AdvisorSummaryViewModelProtocol {
     var totalNumberOfAdvisorSummaries: Int { get }
     var filterButtonEnabled: Bool { get }
     var filterType: FilterType { get }
-    func getAdvisorSummary(index: Int) -> AdvisorSummraryModel?
+    func getAdvisorSummary(index: Int) -> AdvisorSummraryWrapper.AdvisorSummraryModel?
     func fetchAdvisorSummary() async
     func resetFilters()
     func setFilters(filterType: FilterType)
@@ -24,8 +24,8 @@ enum FilterType: String {
 
 class AdvisorSummaryViewModel: AdvisorSummaryViewModelProtocol {
     private var client: AdvisorSummaryClientProtocol
-    private var advisorSummaries: [AdvisorSummraryModel] = []
-    private var filteredAdvisorSummaries: [AdvisorSummraryModel] = []
+    private var advisorSummaries: [AdvisorSummraryWrapper.AdvisorSummraryModel] = []
+    private var filteredAdvisorSummaries: [AdvisorSummraryWrapper.AdvisorSummraryModel] = []
     
     var filterType: FilterType = .none
     
@@ -42,11 +42,11 @@ class AdvisorSummaryViewModel: AdvisorSummaryViewModelProtocol {
     }
     
     func fetchAdvisorSummary() async {
-        advisorSummaries = await client.getAdvisorClientSummary()
+        advisorSummaries = await client.getAdvisorClientSummary().advisors
         filteredAdvisorSummaries = advisorSummaries
     }
     
-    func getAdvisorSummary(index: Int) -> AdvisorSummraryModel? {
+    func getAdvisorSummary(index: Int) -> AdvisorSummraryWrapper.AdvisorSummraryModel? {
         guard index >= 0 && index < filteredAdvisorSummaries.count else {
             return nil
         }

@@ -5,24 +5,18 @@
 //  Created by Gennady Kaminsky on 3/17/25.
 //
 
+import Foundation
+
 protocol AdvisorSummaryClientProtocol {
-    func getAdvisorClientSummary() async -> [AdvisorSummraryModel]
+    func getAdvisorClientSummary() async -> AdvisorSummraryWrapper
 }
 
 class AdvisorSummaryClient: AdvisorSummaryClientProtocol {
-    func getAdvisorClientSummary() async -> [AdvisorSummraryModel] {
-        return [  AdvisorSummraryModel(name: "Alen Harry",
-                                       custodians: [
-                                         AdvisorSummraryModel.Custodian(name: "Shwab"),
-                                         AdvisorSummraryModel.Custodian(name: "Ameriprice"),
-                                         AdvisorSummraryModel.Custodian(name: "another asset"),
-                                       ]),
-                  AdvisorSummraryModel(name: "Adolf Smith",
-                                      custodians: [
-                                        AdvisorSummraryModel.Custodian(name: "Shwab"),
-                                        AdvisorSummraryModel.Custodian(name: "Ameriprice"),
-                                      ]),
-                
-        ]
+    func getAdvisorClientSummary() async -> AdvisorSummraryWrapper {
+        let filePath = Bundle.main.url(forResource: "MockAdvisorResponse", withExtension: "")!
+        let data = try! Data(contentsOf: filePath)
+        
+        let decoder = JSONDecoder()
+        return try! decoder.decode(AdvisorSummraryWrapper.self, from: data)
     }
 }
