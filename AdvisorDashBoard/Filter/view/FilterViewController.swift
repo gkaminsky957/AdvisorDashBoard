@@ -17,26 +17,26 @@ class FilterViewController: UIViewController {
     @IBOutlet weak var rightButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     
-    private var currentSelection: FilterType!
-    private var userSelection: FilterType!
+    private var viewModel: FilterViewModelProtocol!
     private weak var delegate: FilterViewControllerDelegateProtocol!
+    
     
     @IBAction func cancelButonPressed(_ sender: UIBarButtonItem) {
         dismiss(animated: true)
     }
     
     @IBAction func rightButtonPressed(_ sender: UIBarButtonItem) {
-        if currentSelection == userSelection || userSelection == nil {
+        if  viewModel.shouldClearFilters {
             delegate?.clearFilter()
         } else {
-            delegate?.setFilter(filterType: userSelection)
+            delegate?.setFilter(filterType: viewModel.userSelection!)
         }
         dismiss(animated: true)
     }
     
-    func install(currentSelection: FilterType,
+    func install(viewModel: FilterViewModelProtocol,
                  delegate: FilterViewControllerDelegateProtocol) {
-        self.currentSelection = currentSelection
+        self.viewModel = viewModel
         self.delegate = delegate
     }
     
@@ -55,10 +55,9 @@ extension FilterViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(FilterTableViewCell.self)
-        let selection = userSelection != nil ? userSelection : currentSelection
-        cell.setCell(text: indexPath.row == 0 ? FilterType.byName.rawValue : FilterType.byAssets.rawValue,
-                     selected: selection == .byName && indexPath.row == 0 ||
-                               selection == .byAssets && indexPath.row == 1)
+       
+        cell.setCell(text: viewModel.getCellTitle(index: indexPath.row),
+                     selected: viewModel.getCellSelected(index: indexPath.row))
         
         return cell
     }
@@ -66,11 +65,7 @@ extension FilterViewController: UITableViewDataSource {
 
 extension FilterViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            userSelection = .byName
-        } else {
-            userSelection = .byAssets
-        }
+        viewModel.setUserSelection(index: indexPath.row)
         
         setRightButton()
         
@@ -80,7 +75,7 @@ extension FilterViewController: UITableViewDelegate {
 
 private extension FilterViewController {
     func setRightButtonOnLoad() {
-        if currentSelection != FilterType.none {
+        if viewModel.currentSelection != FilterType.none {
             rightButton.title = "Clear"
             rightButton.isHidden = false
         } else {
@@ -90,10 +85,6 @@ private extension FilterViewController {
     
     func setRightButton() {
         rightButton.isHidden = false
-        if userSelection == currentSelection {
-            rightButton.title = "Clear"
-        } else {
-            rightButton.title = "Save"
-        }
+        rightButton.title = viewModel.rightButtonTitle
     }
 }

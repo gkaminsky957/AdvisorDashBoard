@@ -13,6 +13,7 @@ protocol AdvisorSummaryViewModelProtocol {
     func fetchAdvisorSummary() async
     func resetFilters()
     func setFilters(filterType: FilterType)
+    func getFilterViewModel() -> FilterViewModelProtocol
 }
 
 enum FilterType: String {
@@ -67,5 +68,9 @@ class AdvisorSummaryViewModel: AdvisorSummaryViewModelProtocol {
         case .none:
             break
         }
+    }
+    
+    func getFilterViewModel() -> FilterViewModelProtocol {
+        return FilterViewModel(currentSelection: filterType)
     }
 }

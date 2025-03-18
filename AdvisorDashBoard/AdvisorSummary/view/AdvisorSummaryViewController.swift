@@ -36,7 +36,7 @@ class AdvisorSummaryViewController: UIViewController {
         switch destination {
         case is UINavigationController:
             if let navController = destination as? UINavigationController, let vc = navController.viewControllers.last as? FilterViewController {
-                vc.install(currentSelection: viewModel.filterType,
+                vc.install(viewModel: viewModel.getFilterViewModel(),
                            delegate: self)
             }
         default: break
