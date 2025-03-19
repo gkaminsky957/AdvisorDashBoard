@@ -6,13 +6,19 @@
 //
 
 protocol AccountSummaryViewModelProtocol {
+    var totalNumberOFAccountSummaries: Int { get }
     func fetchAccountSummary() async
+    func getAccountSummary(index: Int) -> AccountSummaryModel.AccountSummary?
 }
 
 class AccountSummaryViewModel: AccountSummaryViewModelProtocol {
     private var advisorId: String
     private var client: AccountSummaryClientProtocol
     private var summaries: [AccountSummaryModel.AccountSummary] = []
+    
+    var totalNumberOFAccountSummaries: Int {
+        return summaries.count
+    }
     
     init(advisorId: String,
         client: AccountSummaryClientProtocol = AccountSummaryClient()) {
@@ -22,7 +28,13 @@ class AccountSummaryViewModel: AccountSummaryViewModelProtocol {
     
     func fetchAccountSummary() async {
         summaries = await client.getAccountSummary(advisorId: advisorId).accounts
-        print("account summaris=\(summaries)")
+    }
+    
+    func getAccountSummary(index: Int) -> AccountSummaryModel.AccountSummary? {
+        guard index >= 0 && index < summaries.count else {
+            return nil
+        }
+        return summaries[index]
     }
 }
 

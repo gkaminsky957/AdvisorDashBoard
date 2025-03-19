@@ -21,6 +21,7 @@ class AccountSummaryViewController: UIViewController {
         
         Task {
             await viewModel.fetchAccountSummary()
+            tableView.reloadData()
         }
     }
     
@@ -31,12 +32,22 @@ class AccountSummaryViewController: UIViewController {
 
 extension AccountSummaryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return viewModel.totalNumberOFAccountSummaries
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(AccountSummaryTableViewCell.self)
+        guard let model = viewModel.getAccountSummary(index: indexPath.row) else {
+            return UITableViewCell()
+        }
+        cell.setCell(model: model)
         
         return cell
+    }
+}
+
+extension AccountSummaryViewController: UITabBarDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
 }
