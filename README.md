@@ -1,5 +1,5 @@
 **General Infrmation:**
-- Application does not have dependecies on any third party libraris so running it very straightforward: just build it from XCode.
+- Application does not have dependecies on any third party libraries so running it very straightforward: just build it from XCode.
 - Application is designed using MVVM architecture design pattern and UIKit for creating UI component (I think that what the assignment instructions are implying by saying `design and implement a table view`)
   - each view controller is backed up by a view model that contains all business logic
   - each view model that requires a network call is injected with a network client that makes a network call and parses the received data into data model on behave of the view model
@@ -11,10 +11,10 @@
   - Clicking on the specific account card will navigate to holding screen that shows all holdings that selected account has. This includes tha holding name, unit number, and unit price.
 
 **Assumption made:**
-- Network API layer provides two APIs: one for fetching advisor list and another for fetching accounts that an advisor manages. The assumption here is that advisor `id` field in advisor API response will match the `repId` field in account API response. Example of each API call can be found in
-  - `MockAdvisorResponse` file, found main project, that contains mock JSON response for advisor API call. This response contains two advisors.
-  - `MockAccountSummaryResponseRepId1` and `MockAccountSummaryResponseRepId2` files, found in main project, that contain mock JSON response for account API call. Each of this response corresponds to a advisor specified in M`ockAdvisorResponse`.
-  - these two network clients `AccountSummaryClient` and `AdvisorSummaryClient` objects read corresponding mock file and parses it out instead of making actual network call to get the response since there is no real APIs exist.
+- Network API layer provides two APIs: one for fetching advisor list and another for fetching accounts that an advisor manages. The assumption here is that advisor `id` field in advisor API response will match the `repId` field in account API response. Example of each API call responses can be found in
+  - `MockAdvisorResponse` file, found in main project, that contains mock JSON response for advisor API call. This response contains two advisors.
+  - `MockAccountSummaryResponseRepId1` and `MockAccountSummaryResponseRepId2` files, found in main project, that contain mock JSON response for account API call. Each of these responses corresponds to an advisor specified in `MockAdvisorResponse`.
+  - these two network clients `AccountSummaryClient` and `AdvisorSummaryClient` objects read corresponding mock file and parse it out instead of making actual network call to get the response since there is no real APIs exist.
 
 **TODO's to make the application production ready:**
 - Change `AccountSummaryClient` and `AdvisorSummaryClient` network objects to use `UrlSession` object to make a real network call instead of returning mock responses. URLSession object would have been injected into both clients so it can be easily mocked during unit tests.
