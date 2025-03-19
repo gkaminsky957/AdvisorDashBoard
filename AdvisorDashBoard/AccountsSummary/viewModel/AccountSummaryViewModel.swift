@@ -9,6 +9,7 @@ protocol AccountSummaryViewModelProtocol {
     var totalNumberOFAccountSummaries: Int { get }
     func fetchAccountSummary() async
     func getAccountSummary(index: Int) -> AccountSummaryModel.AccountSummary?
+    func getHoldingsViewModel(index: Int) -> HoldingsViewModelProtocol
 }
 
 class AccountSummaryViewModel: AccountSummaryViewModelProtocol {
@@ -35,6 +36,10 @@ class AccountSummaryViewModel: AccountSummaryViewModelProtocol {
             return nil
         }
         return summaries[index]
+    }
+    
+    func getHoldingsViewModel(index: Int) -> HoldingsViewModelProtocol {
+        return HoldingsViewModel(holdings: summaries[index].holdings)
     }
 }
 

@@ -12,6 +12,10 @@ class AccountSummaryViewController: UIViewController {
     
     private var viewModel: AccountSummaryViewModelProtocol!
     
+    func inject(viewModel: AccountSummaryViewModelProtocol) {
+        self.viewModel = viewModel
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Accounts Summary"
@@ -25,8 +29,16 @@ class AccountSummaryViewController: UIViewController {
         }
     }
     
-    func inject(viewModel: AccountSummaryViewModelProtocol) {
-        self.viewModel = viewModel
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination
+        
+        switch destination {
+        case is HoldingsViewController:
+            if let vc = destination as? HoldingsViewController, let viewModel = sender as? HoldingsViewModelProtocol {
+                vc.inject(viewModel: viewModel)
+            }
+        default: break
+        }
     }
 }
 
@@ -46,8 +58,8 @@ extension AccountSummaryViewController: UITableViewDataSource {
     }
 }
 
-extension AccountSummaryViewController: UITabBarDelegate {
+extension AccountSummaryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        performSegue(withIdentifier: "HoldingsViewControllerIdentifier", sender: viewModel.getHoldingsViewModel(index: indexPath.row))
     }
 }

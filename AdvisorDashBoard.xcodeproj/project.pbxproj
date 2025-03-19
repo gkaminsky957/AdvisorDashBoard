@@ -35,6 +35,10 @@
 		1743C8D52D89D3B300A6EE8F /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1743C8D42D89D3B300A6EE8F /* FilterViewController.swift */; };
 		1743C8D92D89DFBD00A6EE8F /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1743C8D72D89DFBD00A6EE8F /* FilterTableViewCell.swift */; };
 		1743C8DA2D89DFBD00A6EE8F /* FilterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1743C8D82D89DFBD00A6EE8F /* FilterTableViewCell.xib */; };
+		17B0549C2D8A7574004AF51E /* HoldingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B0549B2D8A7574004AF51E /* HoldingsViewController.swift */; };
+		17B0549F2D8A7599004AF51E /* HoldingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B0549D2D8A7599004AF51E /* HoldingsTableViewCell.swift */; };
+		17B054A02D8A7599004AF51E /* HoldingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B0549E2D8A7599004AF51E /* HoldingsTableViewCell.xib */; };
+		17B054A22D8A75BF004AF51E /* HoldingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B054A12D8A75BF004AF51E /* HoldingsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +91,10 @@
 		1743C8D42D89D3B300A6EE8F /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		1743C8D72D89DFBD00A6EE8F /* FilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
 		1743C8D82D89DFBD00A6EE8F /* FilterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterTableViewCell.xib; sourceTree = "<group>"; };
+		17B0549B2D8A7574004AF51E /* HoldingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoldingsViewController.swift; sourceTree = "<group>"; };
+		17B0549D2D8A7599004AF51E /* HoldingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoldingsTableViewCell.swift; sourceTree = "<group>"; };
+		17B0549E2D8A7599004AF51E /* HoldingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HoldingsTableViewCell.xib; sourceTree = "<group>"; };
+		17B054A12D8A75BF004AF51E /* HoldingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoldingsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +208,7 @@
 		17400FC52D8887D500573352 /* AdvisorDashBoard */ = {
 			isa = PBXGroup;
 			children = (
+				17B054982D8A7507004AF51E /* Holdings */,
 				170824072D8A028400E3130B /* AccountsSummary */,
 				17400FF82D88902F00573352 /* AdvisorSummary */,
 				1743C8D32D89D37C00A6EE8F /* Filter */,
@@ -302,6 +311,33 @@
 				1743C8D82D89DFBD00A6EE8F /* FilterTableViewCell.xib */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		17B054982D8A7507004AF51E /* Holdings */ = {
+			isa = PBXGroup;
+			children = (
+				17B054992D8A7520004AF51E /* view */,
+				17B0549A2D8A7537004AF51E /* viewModel */,
+			);
+			path = Holdings;
+			sourceTree = "<group>";
+		};
+		17B054992D8A7520004AF51E /* view */ = {
+			isa = PBXGroup;
+			children = (
+				17B0549B2D8A7574004AF51E /* HoldingsViewController.swift */,
+				17B0549D2D8A7599004AF51E /* HoldingsTableViewCell.swift */,
+				17B0549E2D8A7599004AF51E /* HoldingsTableViewCell.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		17B0549A2D8A7537004AF51E /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				17B054A12D8A75BF004AF51E /* HoldingsViewModel.swift */,
+			);
+			path = viewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,6 +445,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17400FD02D8887D700573352 /* Assets.xcassets in Resources */,
+				17B054A02D8A7599004AF51E /* HoldingsTableViewCell.xib in Resources */,
 				17400FD32D8887D700573352 /* Base in Resources */,
 				1708241B2D8A65CC00E3130B /* AccountSummaryTableViewCell.xib in Resources */,
 				17400FF72D888EEE00573352 /* Main.storyboard in Resources */,
@@ -449,6 +486,7 @@
 				1743C8CE2D89B44F00A6EE8F /* UITableView+Extensions.swift in Sources */,
 				170824112D8A0B3600E3130B /* AccountSummaryClient.swift in Sources */,
 				1708240F2D8A09E100E3130B /* AccountSummaryViewModel.swift in Sources */,
+				17B0549C2D8A7574004AF51E /* HoldingsViewController.swift in Sources */,
 				17400FFC2D88907800573352 /* AdvisorSummaryViewModel.swift in Sources */,
 				174010062D88920600573352 /* AdvisorSummraryModel.swift in Sources */,
 				17400FC92D8887D500573352 /* SceneDelegate.swift in Sources */,
@@ -457,6 +495,8 @@
 				1743C8D92D89DFBD00A6EE8F /* FilterTableViewCell.swift in Sources */,
 				1708241A2D8A65CC00E3130B /* AccountSummaryTableViewCell.swift in Sources */,
 				1708240D2D8A03E500E3130B /* AccountSummaryViewController.swift in Sources */,
+				17B054A22D8A75BF004AF51E /* HoldingsViewModel.swift in Sources */,
+				17B0549F2D8A7599004AF51E /* HoldingsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -81,11 +81,28 @@
                     <navigationItem key="navigationItem" id="czc-Kg-g5p"/>
                     <connections>
                         <outlet property="tableView" destination="LWt-d9-YKP" id="enO-Aj-KeK"/>
+                        <segue destination="oSm-Px-xFC" kind="show" identifier="HoldingsViewControllerIdentifier" id="dtE-N8-hw2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0gY-jG-JCk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1812" y="294"/>
+            <point key="canvasLocation" x="1824" y="335"/>
+        </scene>
+        <!--Holdings View Controller-->
+        <scene sceneID="17O-4H-lUr">
+            <objects>
+                <viewController id="oSm-Px-xFC" customClass="HoldingsViewController" customModule="AdvisorDashBoard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mtt-Fi-a3y">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="du7-JT-DAR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wtV-IS-COZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pnQ-7y-apL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2658" y="335"/>
         </scene>
         <!--Filter View Controller-->
         <scene sceneID="IxU-41-LrG">
