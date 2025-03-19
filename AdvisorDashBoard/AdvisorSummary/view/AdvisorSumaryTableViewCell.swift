@@ -10,18 +10,11 @@ import UIKit
 class AdvisorSumaryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var advisorName: UILabel!
-    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var assets: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
-        let layer = containerView.layer
-        layer.cornerRadius = 3
-        layer.shadowRadius = 3
-        layer.shadowColor = UIColor.brown.cgColor
-        layer.shadowOffset = CGSize(width: 0, height : 1.0)
-        layer.shadowOpacity = 0.6
     }
 
     func setCell(model: AdvisorSummraryWrapper.AdvisorSummraryModel) {

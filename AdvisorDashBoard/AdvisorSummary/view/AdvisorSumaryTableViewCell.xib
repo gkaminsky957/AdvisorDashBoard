@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="332" height="104"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNh-z1-hDL" userLabel="containerView">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNh-z1-hDL" userLabel="containerView" customClass="ShadowView" customModule="AdvisorDashBoard" customModuleProvider="target">
                         <rect key="frame" x="10" y="10" width="312" height="84"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MZ7-75-5OQ">
@@ -78,7 +78,6 @@
             <connections>
                 <outlet property="advisorName" destination="avy-2h-C9f" id="Xi1-w3-yqZ"/>
                 <outlet property="assets" destination="yMq-qZ-1Vf" id="Stq-Gi-Ndu"/>
-                <outlet property="containerView" destination="NNh-z1-hDL" id="65E-Zz-nO0"/>
             </connections>
             <point key="canvasLocation" x="13.740458015267174" y="22.535211267605636"/>
         </tableViewCell>

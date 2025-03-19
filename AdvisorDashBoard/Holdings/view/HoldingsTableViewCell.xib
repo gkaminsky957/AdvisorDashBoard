@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="373" height="120"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e9b-bV-TsV" userLabel="containerView">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e9b-bV-TsV" userLabel="containerView" customClass="ShadowView" customModule="AdvisorDashBoard" customModuleProvider="target">
                         <rect key="frame" x="10" y="10" width="353" height="100"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="39" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ve6-Jt-w5r">
@@ -93,7 +93,6 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="containerView" destination="e9b-bV-TsV" id="kPR-Go-jsk"/>
                 <outlet property="name" destination="Xji-m0-jPO" id="YEq-3v-huX"/>
                 <outlet property="number" destination="10Z-dw-6gM" id="bzd-VA-QLY"/>
                 <outlet property="price" destination="NUO-Pm-JtY" id="fhu-Jl-o0i"/>

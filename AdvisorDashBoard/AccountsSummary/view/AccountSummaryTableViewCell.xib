@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jXK-D7-QEM" userLabel="containerView">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jXK-D7-QEM" userLabel="containerView" customClass="ShadowView" customModule="AdvisorDashBoard" customModuleProvider="target">
                         <rect key="frame" x="10" y="10" width="355" height="155"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="41" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Eh5-14-6k8">
@@ -108,7 +108,6 @@
             <connections>
                 <outlet property="accountName" destination="piF-kN-VyU" id="6c4-qw-cma"/>
                 <outlet property="accountNumber" destination="e6S-Rp-sUW" id="CNV-3n-0db"/>
-                <outlet property="containerView" destination="jXK-D7-QEM" id="CXM-kM-gfE"/>
                 <outlet property="custodianName" destination="KZm-al-Bif" id="4Eb-8b-sid"/>
             </connections>
             <point key="canvasLocation" x="38.931297709923662" y="66.549295774647888"/>

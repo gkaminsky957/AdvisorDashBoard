@@ -12,19 +12,11 @@ class AccountSummaryTableViewCell: UITableViewCell {
     @IBOutlet weak var accountName: UILabel!
     @IBOutlet weak var accountNumber: UILabel!
     @IBOutlet weak var custodianName: UILabel!
-    @IBOutlet weak var containerView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         selectionStyle = .none
-        
-        let layer = containerView.layer
-        layer.cornerRadius = 3
-        layer.shadowRadius = 3
-        layer.shadowColor = UIColor.brown.cgColor
-        layer.shadowOffset = CGSize(width: 0, height : 1.0)
-        layer.shadowOpacity = 0.6
     }
     
     func setCell(model: AccountSummaryModel.AccountSummary) {
