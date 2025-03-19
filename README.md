@@ -7,4 +7,7 @@
   - Clicking on the specific account card will navigate to holding screen that shows all holdings that selected account has. This includes tha holding name, unit number, and unit price.
 
 **Assumption made:**
-- Network API layer provides two APIs: one for fetching advisor list and another for fetching accounts that an advisor manages. The assumption here is that advisor `id` field in advisor API response will match the `repId` field in account API response.
+- Network API layer provides two APIs: one for fetching advisor list and another for fetching accounts that an advisor manages. The assumption here is that advisor `id` field in advisor API response will match the `repId` field in account API response. Example of each API call can be found in
+  - `MockAdvisorResponse` file, found main project, that contains mock JSON response for advisor API call. This response contains two advisors.
+  - `MockAccountSummaryResponseRepId1` and `MockAccountSummaryResponseRepId2` files, found in main project, that contain mock JSON response for account API call. Each of this response corresponds to a advisor specified in M`ockAdvisorResponse`.
+  - these two network clients `AccountSummaryClient` and `AdvisorSummaryClient` objects read corresponding mock file and parses it out instead of making actual network call to get the response since there is no real APIs exist.
