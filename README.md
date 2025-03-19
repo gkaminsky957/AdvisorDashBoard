@@ -11,3 +11,11 @@
   - `MockAdvisorResponse` file, found main project, that contains mock JSON response for advisor API call. This response contains two advisors.
   - `MockAccountSummaryResponseRepId1` and `MockAccountSummaryResponseRepId2` files, found in main project, that contain mock JSON response for account API call. Each of this response corresponds to a advisor specified in M`ockAdvisorResponse`.
   - these two network clients `AccountSummaryClient` and `AdvisorSummaryClient` objects read corresponding mock file and parses it out instead of making actual network call to get the response since there is no real APIs exist.
+
+**TODO's to make the application production ready:**
+- Have a UX/UI designer to make the screens more attractive
+- Support dark mode colors, images
+- Support localization
+- add init tests
+- add UI tests
+- add CI/CD pipeline to make building/submitting the build to app store aoutomatic.
