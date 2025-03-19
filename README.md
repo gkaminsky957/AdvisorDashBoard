@@ -21,6 +21,8 @@
 - Add handling of error cases should network call fail
 - Add handling of an empty case where any of the two calls return an empty list (no advisor returned or no accounts returned by the network API call)
 - Add some kind of an activity indicator screen that should be shown whenever a network call is in progress and we do not have any data to show just yet.
+- Add application launch icons
+- Design LaunchScreen to show when the app is loading 
 - Have a UX/UI designer to make the screens more attractive
 - Support dark mode colors, images
 - Support localization
