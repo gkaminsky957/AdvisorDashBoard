@@ -14,6 +14,7 @@ protocol AdvisorSummaryViewModelProtocol {
     func resetFilters()
     func setFilters(filterType: FilterType)
     func getFilterViewModel() -> FilterViewModelProtocol
+    func getAccountSummaryViewModel(index: Int) -> AccountSummaryViewModelProtocol
 }
 
 enum FilterType: String {
@@ -72,5 +73,10 @@ class AdvisorSummaryViewModel: AdvisorSummaryViewModelProtocol {
     
     func getFilterViewModel() -> FilterViewModelProtocol {
         return FilterViewModel(currentSelection: filterType)
+    }
+    
+    func getAccountSummaryViewModel(index: Int) -> AccountSummaryViewModelProtocol {
+        let advisorSummaryModel = filteredAdvisorSummaries[index]
+        return AccountSummaryViewModel(advisorId: advisorSummaryModel.id)
     }
 }

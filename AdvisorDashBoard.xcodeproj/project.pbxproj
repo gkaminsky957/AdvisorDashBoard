@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		170823FC2D89ED7100E3130B /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170823FB2D89ED7100E3130B /* FilterViewModel.swift */; };
 		170824062D89F96900E3130B /* MockAdvisorResponse in Resources */ = {isa = PBXBuildFile; fileRef = 170824052D89F96900E3130B /* MockAdvisorResponse */; };
+		1708240D2D8A03E500E3130B /* AccountSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1708240C2D8A03E500E3130B /* AccountSummaryViewController.swift */; };
+		1708240F2D8A09E100E3130B /* AccountSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1708240E2D8A09E100E3130B /* AccountSummaryViewModel.swift */; };
+		170824112D8A0B3600E3130B /* AccountSummaryClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170824102D8A0B3600E3130B /* AccountSummaryClient.swift */; };
+		170824132D8A0BA200E3130B /* AccountSummaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170824122D8A0BA200E3130B /* AccountSummaryModel.swift */; };
+		170824152D8A100200E3130B /* MockAccountSummaryResponseRepId1 in Resources */ = {isa = PBXBuildFile; fileRef = 170824142D8A100200E3130B /* MockAccountSummaryResponseRepId1 */; };
+		170824172D8A63BA00E3130B /* MockAccountSummaryResponseRepId2 in Resources */ = {isa = PBXBuildFile; fileRef = 170824162D8A63BA00E3130B /* MockAccountSummaryResponseRepId2 */; };
+		1708241A2D8A65CC00E3130B /* AccountSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170824182D8A65CC00E3130B /* AccountSummaryTableViewCell.swift */; };
+		1708241B2D8A65CC00E3130B /* AccountSummaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 170824192D8A65CC00E3130B /* AccountSummaryTableViewCell.xib */; };
 		17400FC72D8887D500573352 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17400FC62D8887D500573352 /* AppDelegate.swift */; };
 		17400FC92D8887D500573352 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17400FC82D8887D500573352 /* SceneDelegate.swift */; };
 		17400FCB2D8887D500573352 /* AdvisorSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17400FCA2D8887D500573352 /* AdvisorSummaryViewController.swift */; };
@@ -49,6 +57,14 @@
 /* Begin PBXFileReference section */
 		170823FB2D89ED7100E3130B /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
 		170824052D89F96900E3130B /* MockAdvisorResponse */ = {isa = PBXFileReference; lastKnownFileType = text; path = MockAdvisorResponse; sourceTree = "<group>"; };
+		1708240C2D8A03E500E3130B /* AccountSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewController.swift; sourceTree = "<group>"; };
+		1708240E2D8A09E100E3130B /* AccountSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewModel.swift; sourceTree = "<group>"; };
+		170824102D8A0B3600E3130B /* AccountSummaryClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryClient.swift; sourceTree = "<group>"; };
+		170824122D8A0BA200E3130B /* AccountSummaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryModel.swift; sourceTree = "<group>"; };
+		170824142D8A100200E3130B /* MockAccountSummaryResponseRepId1 */ = {isa = PBXFileReference; lastKnownFileType = text; path = MockAccountSummaryResponseRepId1; sourceTree = "<group>"; };
+		170824162D8A63BA00E3130B /* MockAccountSummaryResponseRepId2 */ = {isa = PBXFileReference; lastKnownFileType = text; path = MockAccountSummaryResponseRepId2; sourceTree = "<group>"; };
+		170824182D8A65CC00E3130B /* AccountSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryTableViewCell.swift; sourceTree = "<group>"; };
+		170824192D8A65CC00E3130B /* AccountSummaryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSummaryTableViewCell.xib; sourceTree = "<group>"; };
 		17400FC32D8887D500573352 /* AdvisorDashBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdvisorDashBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17400FC62D8887D500573352 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17400FC82D8887D500573352 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,8 +126,55 @@
 			isa = PBXGroup;
 			children = (
 				170824052D89F96900E3130B /* MockAdvisorResponse */,
+				170824142D8A100200E3130B /* MockAccountSummaryResponseRepId1 */,
+				170824162D8A63BA00E3130B /* MockAccountSummaryResponseRepId2 */,
 			);
 			path = mockResponses;
+			sourceTree = "<group>";
+		};
+		170824072D8A028400E3130B /* AccountsSummary */ = {
+			isa = PBXGroup;
+			children = (
+				170824092D8A035600E3130B /* view */,
+				170824082D8A034800E3130B /* viewModel */,
+				1708240A2D8A036600E3130B /* client */,
+				1708240B2D8A038600E3130B /* model */,
+			);
+			path = AccountsSummary;
+			sourceTree = "<group>";
+		};
+		170824082D8A034800E3130B /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1708240E2D8A09E100E3130B /* AccountSummaryViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		170824092D8A035600E3130B /* view */ = {
+			isa = PBXGroup;
+			children = (
+				1708240C2D8A03E500E3130B /* AccountSummaryViewController.swift */,
+				170824182D8A65CC00E3130B /* AccountSummaryTableViewCell.swift */,
+				170824192D8A65CC00E3130B /* AccountSummaryTableViewCell.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		1708240A2D8A036600E3130B /* client */ = {
+			isa = PBXGroup;
+			children = (
+				170824102D8A0B3600E3130B /* AccountSummaryClient.swift */,
+			);
+			path = client;
+			sourceTree = "<group>";
+		};
+		1708240B2D8A038600E3130B /* model */ = {
+			isa = PBXGroup;
+			children = (
+				170824122D8A0BA200E3130B /* AccountSummaryModel.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		17400FBA2D8887D500573352 = {
@@ -137,6 +200,7 @@
 		17400FC52D8887D500573352 /* AdvisorDashBoard */ = {
 			isa = PBXGroup;
 			children = (
+				170824072D8A028400E3130B /* AccountsSummary */,
 				17400FF82D88902F00573352 /* AdvisorSummary */,
 				1743C8D32D89D37C00A6EE8F /* Filter */,
 				1743C8CC2D89B42B00A6EE8F /* Extesions */,
@@ -346,9 +410,12 @@
 			files = (
 				17400FD02D8887D700573352 /* Assets.xcassets in Resources */,
 				17400FD32D8887D700573352 /* Base in Resources */,
+				1708241B2D8A65CC00E3130B /* AccountSummaryTableViewCell.xib in Resources */,
 				17400FF72D888EEE00573352 /* Main.storyboard in Resources */,
 				1743C8DA2D89DFBD00A6EE8F /* FilterTableViewCell.xib in Resources */,
+				170824172D8A63BA00E3130B /* MockAccountSummaryResponseRepId2 in Resources */,
 				170824062D89F96900E3130B /* MockAdvisorResponse in Resources */,
+				170824152D8A100200E3130B /* MockAccountSummaryResponseRepId1 in Resources */,
 				17400FFF2D8890CD00573352 /* AdvisorSumaryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,13 +445,18 @@
 				17400FCB2D8887D500573352 /* AdvisorSummaryViewController.swift in Sources */,
 				17400FC72D8887D500573352 /* AppDelegate.swift in Sources */,
 				1743C8D52D89D3B300A6EE8F /* FilterViewController.swift in Sources */,
+				170824132D8A0BA200E3130B /* AccountSummaryModel.swift in Sources */,
 				1743C8CE2D89B44F00A6EE8F /* UITableView+Extensions.swift in Sources */,
+				170824112D8A0B3600E3130B /* AccountSummaryClient.swift in Sources */,
+				1708240F2D8A09E100E3130B /* AccountSummaryViewModel.swift in Sources */,
 				17400FFC2D88907800573352 /* AdvisorSummaryViewModel.swift in Sources */,
 				174010062D88920600573352 /* AdvisorSummraryModel.swift in Sources */,
 				17400FC92D8887D500573352 /* SceneDelegate.swift in Sources */,
 				170823FC2D89ED7100E3130B /* FilterViewModel.swift in Sources */,
 				174010002D8890CD00573352 /* AdvisorSumaryTableViewCell.swift in Sources */,
 				1743C8D92D89DFBD00A6EE8F /* FilterTableViewCell.swift in Sources */,
+				1708241A2D8A65CC00E3130B /* AccountSummaryTableViewCell.swift in Sources */,
+				1708240D2D8A03E500E3130B /* AccountSummaryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

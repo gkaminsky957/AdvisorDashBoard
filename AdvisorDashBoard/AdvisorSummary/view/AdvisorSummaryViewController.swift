@@ -36,8 +36,12 @@ class AdvisorSummaryViewController: UIViewController {
         switch destination {
         case is UINavigationController:
             if let navController = destination as? UINavigationController, let vc = navController.viewControllers.last as? FilterViewController {
-                vc.install(viewModel: viewModel.getFilterViewModel(),
+                vc.inject(viewModel: viewModel.getFilterViewModel(),
                            delegate: self)
+            }
+        case is AccountSummaryViewController:
+            if let vc = destination as? AccountSummaryViewController, let index = sender as? Int {
+                vc.inject(viewModel: viewModel.getAccountSummaryViewModel(index: index))
             }
         default: break
         }
@@ -63,7 +67,7 @@ extension AdvisorSummaryViewController: UITableViewDataSource {
 
 extension AdvisorSummaryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        performSegue(withIdentifier: "AccountSummaryViewControllerIdentifier", sender: indexPath.row)
     }
 }
 

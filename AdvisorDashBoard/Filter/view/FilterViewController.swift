@@ -34,7 +34,7 @@ class FilterViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    func install(viewModel: FilterViewModelProtocol,
+    func inject(viewModel: FilterViewModelProtocol,
                  delegate: FilterViewControllerDelegateProtocol) {
         self.viewModel = viewModel
         self.delegate = delegate
