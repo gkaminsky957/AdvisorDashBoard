@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,50 +16,68 @@
                 <rect key="frame" x="0.0" y="0.0" width="332" height="80"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="Advisor Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDw-tq-6mN" userLabel="advisorNameTitle">
-                        <rect key="frame" x="9.9999999999999929" y="14.999999999999998" width="119.33333333333331" height="20.333333333333329"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Randolf Smith" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avy-2h-C9f" userLabel="advisorName">
-                        <rect key="frame" x="134.33333333333337" y="15" width="182.66666666666663" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Assets:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bu2-9P-feK" userLabel="assetsTitle">
-                        <rect key="frame" x="10" y="40.333333333333336" width="61" height="21"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yMq-qZ-1Vf" userLabel="assets">
-                        <rect key="frame" x="76" y="40.333333333333336" width="241" height="29.666666666666664"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNh-z1-hDL" userLabel="containerView">
+                        <rect key="frame" x="10" y="10" width="312" height="60"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Advisor Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDw-tq-6mN" userLabel="advisorNameTitle">
+                                <rect key="frame" x="19.999999999999993" y="20" width="119.33333333333331" height="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Randolf Smith" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avy-2h-C9f" userLabel="advisorName">
+                                <rect key="frame" x="144.33333333333337" y="20" width="147.66666666666663" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Assets:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bu2-9P-feK" userLabel="assetsTitle">
+                                <rect key="frame" x="20" y="40" width="61" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yMq-qZ-1Vf" userLabel="assets">
+                                <rect key="frame" x="86" y="40" width="206" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="yMq-qZ-1Vf" secondAttribute="bottom" constant="20" id="0bp-NE-lNT"/>
+                            <constraint firstItem="avy-2h-C9f" firstAttribute="leading" secondItem="PDw-tq-6mN" secondAttribute="trailing" constant="5" id="5wG-o1-WsW"/>
+                            <constraint firstItem="bu2-9P-feK" firstAttribute="top" secondItem="PDw-tq-6mN" secondAttribute="bottom" constant="5" id="CZS-Fy-8f6"/>
+                            <constraint firstItem="yMq-qZ-1Vf" firstAttribute="top" secondItem="bu2-9P-feK" secondAttribute="top" id="M9m-qv-ULD"/>
+                            <constraint firstItem="yMq-qZ-1Vf" firstAttribute="leading" secondItem="bu2-9P-feK" secondAttribute="trailing" constant="5" id="T8U-Uo-c0x"/>
+                            <constraint firstItem="avy-2h-C9f" firstAttribute="top" secondItem="PDw-tq-6mN" secondAttribute="top" id="bbf-RP-bej"/>
+                            <constraint firstItem="PDw-tq-6mN" firstAttribute="leading" secondItem="NNh-z1-hDL" secondAttribute="leading" constant="20" id="csN-5c-yrD"/>
+                            <constraint firstItem="PDw-tq-6mN" firstAttribute="top" secondItem="NNh-z1-hDL" secondAttribute="top" constant="20" id="ey7-Qt-7ZM"/>
+                            <constraint firstItem="yMq-qZ-1Vf" firstAttribute="trailing" secondItem="avy-2h-C9f" secondAttribute="trailing" id="ghU-wo-e9S"/>
+                            <constraint firstItem="bu2-9P-feK" firstAttribute="leading" secondItem="PDw-tq-6mN" secondAttribute="leading" id="isB-SQ-e7b"/>
+                            <constraint firstAttribute="trailing" secondItem="avy-2h-C9f" secondAttribute="trailing" constant="20" id="zVL-qM-Liu"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="avy-2h-C9f" secondAttribute="trailing" constant="15" id="0f8-mX-2tL"/>
-                    <constraint firstItem="bu2-9P-feK" firstAttribute="leading" secondItem="PDw-tq-6mN" secondAttribute="leading" id="4Dx-qv-qHk"/>
-                    <constraint firstItem="avy-2h-C9f" firstAttribute="top" secondItem="PDw-tq-6mN" secondAttribute="top" id="5RV-Eo-GyE"/>
-                    <constraint firstItem="PDw-tq-6mN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Hhw-aq-2yM"/>
-                    <constraint firstItem="yMq-qZ-1Vf" firstAttribute="trailing" secondItem="avy-2h-C9f" secondAttribute="trailing" id="LxO-2b-qyc"/>
-                    <constraint firstAttribute="bottom" secondItem="yMq-qZ-1Vf" secondAttribute="bottom" constant="10" id="XNr-qQ-6ub"/>
-                    <constraint firstItem="avy-2h-C9f" firstAttribute="leading" secondItem="PDw-tq-6mN" secondAttribute="trailing" constant="5" id="fv3-jS-OIY"/>
-                    <constraint firstItem="PDw-tq-6mN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="h6P-VA-yss"/>
-                    <constraint firstItem="yMq-qZ-1Vf" firstAttribute="top" secondItem="bu2-9P-feK" secondAttribute="top" id="kNH-9F-gij"/>
-                    <constraint firstItem="yMq-qZ-1Vf" firstAttribute="leading" secondItem="bu2-9P-feK" secondAttribute="trailing" constant="5" id="tGy-Ky-5hz"/>
-                    <constraint firstItem="bu2-9P-feK" firstAttribute="top" secondItem="PDw-tq-6mN" secondAttribute="bottom" constant="5" id="zhM-I0-kDj"/>
+                    <constraint firstItem="NNh-z1-hDL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="gKo-wc-7DK"/>
+                    <constraint firstItem="NNh-z1-hDL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="iPH-W4-0al"/>
+                    <constraint firstAttribute="trailing" secondItem="NNh-z1-hDL" secondAttribute="trailing" constant="10" id="njX-0R-Vl5"/>
+                    <constraint firstAttribute="bottom" secondItem="NNh-z1-hDL" secondAttribute="bottom" constant="10" id="tpd-8K-9Ym"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="advisorName" destination="avy-2h-C9f" id="Xi1-w3-yqZ"/>
                 <outlet property="assets" destination="yMq-qZ-1Vf" id="Stq-Gi-Ndu"/>
+                <outlet property="containerView" destination="NNh-z1-hDL" id="65E-Zz-nO0"/>
             </connections>
             <point key="canvasLocation" x="13.740458015267174" y="30.985915492957748"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

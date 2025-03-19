@@ -12,16 +12,17 @@ class HoldingsTableViewCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var number: UILabel!
     @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var containerView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
         
-        let layer = self.layer
+        let layer = containerView.layer
         layer.cornerRadius = 3
         layer.shadowRadius = 3
         layer.shadowColor = UIColor.brown.cgColor
-        layer.shadowOffset = CGSize(width: 1, height : 1.0)
+        layer.shadowOffset = CGSize(width: 0, height : 1.0)
         layer.shadowOpacity = 0.6
     }
     
