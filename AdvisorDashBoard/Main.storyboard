@@ -95,10 +95,29 @@
                     <view key="view" contentMode="scaleToFill" id="Mtt-Fi-a3y">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="211-kQ-fhC" userLabel="tableView">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="oSm-Px-xFC" id="w4L-Pg-WhG"/>
+                                    <outlet property="delegate" destination="oSm-Px-xFC" id="hC3-F5-1b5"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="du7-JT-DAR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="du7-JT-DAR" firstAttribute="bottom" secondItem="211-kQ-fhC" secondAttribute="bottom" id="4Cj-75-DPh"/>
+                            <constraint firstItem="211-kQ-fhC" firstAttribute="leading" secondItem="du7-JT-DAR" secondAttribute="leading" id="cBN-Vn-pjC"/>
+                            <constraint firstItem="211-kQ-fhC" firstAttribute="top" secondItem="du7-JT-DAR" secondAttribute="top" id="qWt-vT-dSx"/>
+                            <constraint firstItem="du7-JT-DAR" firstAttribute="trailing" secondItem="211-kQ-fhC" secondAttribute="trailing" id="sSE-FC-5yw"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wtV-IS-COZ"/>
+                    <connections>
+                        <outlet property="tableView" destination="211-kQ-fhC" id="pyK-Hu-qIv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pnQ-7y-apL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
