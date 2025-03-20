@@ -63,8 +63,10 @@ class AdvisorSummaryViewModel: AdvisorSummaryViewModelProtocol {
         self.filterType = filterType
         switch filterType {
         case .byName:
+            filteredAdvisorSummaries = advisorSummaries
             filteredAdvisorSummaries.sort{ $0.name < $1.name }
         case .byAssets:
+            filteredAdvisorSummaries = advisorSummaries
             filteredAdvisorSummaries.sort{ $0.custodians.count > $1.custodians.count }
         case .none:
             break
