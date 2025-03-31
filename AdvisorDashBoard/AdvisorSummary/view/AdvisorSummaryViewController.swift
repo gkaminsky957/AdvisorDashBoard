@@ -11,6 +11,7 @@ class AdvisorSummaryViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var filterButton: UIBarButtonItem!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     @IBAction func filterButtonPressed(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "FilterViewControllerIdentifier", sender: nil)
@@ -25,8 +26,12 @@ class AdvisorSummaryViewController: UIViewController {
         filterButton.isEnabled = false
         
         Task {
+            activityIndicator.startAnimating()
+            activityIndicator.isHidden = false
+            
             await viewModel.fetchAdvisorSummary()
             filterButton.isEnabled = viewModel.filterButtonEnabled
+            activityIndicator.stopAnimating()
             tableView.reloadData()
         }
     }

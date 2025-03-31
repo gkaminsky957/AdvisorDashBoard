@@ -24,13 +24,18 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="Dbn-Sf-92A"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Lpc-dj-BdF">
+                                <rect key="frame" x="178" y="442" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Lpc-dj-BdF" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="0J8-Oa-vky"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="FaA-dE-dUB" secondAttribute="bottom" id="Hc6-oO-1hr"/>
                             <constraint firstItem="FaA-dE-dUB" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="XIo-mb-XZE"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="FaA-dE-dUB" secondAttribute="trailing" id="oe0-AF-1Zb"/>
+                            <constraint firstItem="Lpc-dj-BdF" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="otg-fk-H7k"/>
                             <constraint firstItem="FaA-dE-dUB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ufx-Rv-aij"/>
                         </constraints>
                     </view>
@@ -42,6 +47,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="Lpc-dj-BdF" id="Oiy-Bj-7JC"/>
                         <outlet property="filterButton" destination="dgt-wA-KPg" id="xrH-Xe-8Mi"/>
                         <outlet property="tableView" destination="FaA-dE-dUB" id="bmg-Ek-L2Q"/>
                         <segue destination="3Rq-ti-MgZ" kind="presentation" identifier="FilterViewControllerIdentifier" modalPresentationStyle="fullScreen" id="hgO-Pu-AKL"/>
@@ -68,18 +74,24 @@
                                     <outlet property="delegate" destination="3Lm-yH-ics" id="OSh-cV-bzo"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="9dr-Ov-Nhy">
+                                <rect key="frame" x="178" y="442" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vI1-yR-dEp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vI1-yR-dEp" firstAttribute="trailing" secondItem="LWt-d9-YKP" secondAttribute="trailing" id="0Uq-2J-mME"/>
+                            <constraint firstItem="9dr-Ov-Nhy" firstAttribute="centerY" secondItem="vI1-yR-dEp" secondAttribute="centerY" id="CQs-PA-PTb"/>
                             <constraint firstItem="vI1-yR-dEp" firstAttribute="bottom" secondItem="LWt-d9-YKP" secondAttribute="bottom" id="Vn4-k6-gEc"/>
                             <constraint firstItem="LWt-d9-YKP" firstAttribute="leading" secondItem="vI1-yR-dEp" secondAttribute="leading" id="WyY-Us-pFs"/>
                             <constraint firstItem="LWt-d9-YKP" firstAttribute="top" secondItem="vI1-yR-dEp" secondAttribute="top" id="g8v-PE-i7A"/>
+                            <constraint firstItem="9dr-Ov-Nhy" firstAttribute="centerX" secondItem="vI1-yR-dEp" secondAttribute="centerX" id="uob-Ss-rw9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="czc-Kg-g5p"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="9dr-Ov-Nhy" id="g5B-QV-ifF"/>
                         <outlet property="tableView" destination="LWt-d9-YKP" id="enO-Aj-KeK"/>
                         <segue destination="oSm-Px-xFC" kind="show" identifier="HoldingsViewControllerIdentifier" id="dtE-N8-hw2"/>
                     </connections>

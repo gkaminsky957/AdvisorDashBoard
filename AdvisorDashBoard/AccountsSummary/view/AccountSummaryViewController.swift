@@ -9,6 +9,7 @@ import UIKit
 
 class AccountSummaryViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     private var viewModel: AccountSummaryViewModelProtocol!
     
@@ -24,7 +25,10 @@ class AccountSummaryViewController: UIViewController {
         tableView.register(AccountSummaryTableViewCell.self)
         
         Task {
+            activityIndicator.isHidden = false
+            activityIndicator.startAnimating()
             await viewModel.fetchAccountSummary()
+            activityIndicator.stopAnimating()
             tableView.reloadData()
         }
     }
